@@ -1,0 +1,17 @@
+/Users/mohannagendrapudi/Desktop/firstspringboot/src/main/java/com/demo/entity/Customers.java
+/Users/mohannagendrapudi/Desktop/firstspringboot/src/main/java/com/demo/service/CourseService.java
+/Users/mohannagendrapudi/Desktop/firstspringboot/src/main/java/com/demo/controller/CustomerController.java
+/Users/mohannagendrapudi/Desktop/firstspringboot/src/main/java/com/demo/controller/CourseController.java
+/Users/mohannagendrapudi/Desktop/firstspringboot/src/main/java/com/demo/entity/StudentCourses.java
+/Users/mohannagendrapudi/Desktop/firstspringboot/src/main/java/com/demo/service/CustomerService.java
+/Users/mohannagendrapudi/Desktop/firstspringboot/src/main/java/com/demo/controller/StudentController.java
+/Users/mohannagendrapudi/Desktop/firstspringboot/src/main/java/com/demo/DemoApplication.java
+/Users/mohannagendrapudi/Desktop/firstspringboot/src/main/java/com/demo/repository/CustomerRepository.java
+/Users/mohannagendrapudi/Desktop/firstspringboot/src/main/java/com/demo/entity/Courses.java
+/Users/mohannagendrapudi/Desktop/firstspringboot/src/main/java/com/demo/repository/CourseRepository.java
+/Users/mohannagendrapudi/Desktop/firstspringboot/src/main/java/com/demo/dto/StudentCoursesDTO.java
+/Users/mohannagendrapudi/Desktop/firstspringboot/src/main/java/com/demo/config/KafkaTopicConfig.java
+/Users/mohannagendrapudi/Desktop/firstspringboot/src/main/java/com/demo/entity/Students.java
+/Users/mohannagendrapudi/Desktop/firstspringboot/src/main/java/com/demo/repository/StudentRepository.java
+/Users/mohannagendrapudi/Desktop/firstspringboot/src/main/java/com/demo/service/StudentService.java
+/Users/mohannagendrapudi/Desktop/firstspringboot/src/main/java/com/demo/kafaka/CustomerProducer.java
