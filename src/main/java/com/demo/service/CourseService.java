@@ -37,7 +37,7 @@ public class CourseService {
 	
 	public Page<Courses> getByCourseName(String courseName , int page , int size){
 		PageRequest courseName1 = PageRequest.of(page, size);
-		
+		System.out.println("getByCourseName");
 		return courseRepository.findByCourseName(courseName, courseName1);
 		
 	}
