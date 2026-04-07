@@ -20,7 +20,7 @@ public class CourseService {
 	
 	
 	public Page<Courses> getByCategory(String category, int page , int size){
-		//mohan test
+		
 		PageRequest pageable = PageRequest.of(page, size);
         return courseRepository.findByCategory(category, pageable);
 		
@@ -30,7 +30,7 @@ public class CourseService {
 	public Page<Courses> getByDifficulty(String difficulty, int page , int size){
 		
 		PageRequest difficultPage = PageRequest.of(page, size);
-		System.out.println("getByCourseName");
+		
 		return courseRepository.findByDifficulty(difficulty, difficultPage);
 		
 	}
@@ -38,7 +38,7 @@ public class CourseService {
 	
 	public Page<Courses> getByCourseName(String courseName , int page , int size){
 		PageRequest courseName1 = PageRequest.of(page, size);
-		System.out.println("getByCourseName");
+		
 		return courseRepository.findByCourseName(courseName, courseName1);
 		
 	}
