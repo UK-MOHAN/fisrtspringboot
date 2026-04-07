@@ -30,6 +30,7 @@ public class CourseService {
 	public Page<Courses> getByDifficulty(String difficulty, int page , int size){
 		
 		PageRequest difficultPage = PageRequest.of(page, size);
+		System.out.println(difficultPage);
 		return courseRepository.findByDifficulty(difficulty, difficultPage);
 		
 	}
