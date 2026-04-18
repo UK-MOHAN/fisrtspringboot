@@ -1,7 +1,5 @@
 package com.demo.entity;
 
-
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,21 +10,20 @@ import jakarta.persistence.ManyToOne;
 @Entity
 public class StudentCourses {
 
-    
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
-    private String completionStatus;
-    private double score;
+	private String completionStatus;
+	private double score;
 
-    @ManyToOne
-    @JoinColumn(name = "student_id")
-    private Students student;
+	@ManyToOne
+	@JoinColumn(name = "student_id")
+	private Students student;
 
-    @ManyToOne
-    @JoinColumn(name = "course_id")
-    private Courses course;
+	@ManyToOne
+	@JoinColumn(name = "course_id")
+	private Courses course;
 
 	public Integer getId() {
 		return id;
@@ -68,4 +65,3 @@ public class StudentCourses {
 		this.course = course;
 	}
 }
-

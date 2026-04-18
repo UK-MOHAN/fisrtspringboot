@@ -12,32 +12,30 @@ import com.demo.entity.Courses;
 import com.demo.service.CourseService;
 
 @RestController
-@RequestMapping("/api/courses") 
+@RequestMapping("/api/courses")
 public class CourseController {
 
 	@Autowired
 	private CourseService courseService;
-	
-	
-	
-	  @GetMapping("/category/{category}")
-	    public Page<Courses> getByCategory(
-	        @PathVariable String category,
-	        @RequestParam(defaultValue = "0") int page,
-	        @RequestParam(defaultValue = "5") int size) {
-	        return courseService.getByCategory(category, page, size);
-		
+
+	@GetMapping("/category/{category}")
+	public Page<Courses> getByCategory(@PathVariable String category, @RequestParam(defaultValue = "0") int page,
+			@RequestParam(defaultValue = "5") int size) {
+		return courseService.getByCategory(category, page, size);
+
 	}
-	  
-	  @GetMapping("/difficulty/{difficulty}")
-	  public Page<Courses> getByDifficulty(@PathVariable String difficulty , @RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "2") int size){
+
+	@GetMapping("/difficulty/{difficulty}")
+	public Page<Courses> getByDifficulty(@PathVariable String difficulty, @RequestParam(defaultValue = "0") int page,
+			@RequestParam(defaultValue = "2") int size) {
 		return courseService.getByDifficulty(difficulty, page, size);
-		  
-	  }
-	  
-	  @GetMapping("/courseName/{courseName}")
-	  public Page<Courses> getByCourseName(@PathVariable String courseName , @RequestParam(defaultValue = "0") int page , @RequestParam(defaultValue = "1") int size){
+
+	}
+
+	@GetMapping("/courseName/{courseName}")
+	public Page<Courses> getByCourseName(@PathVariable String courseName, @RequestParam(defaultValue = "0") int page,
+			@RequestParam(defaultValue = "1") int size) {
 		return courseService.getByCourseName(courseName, page, size);
-		  
-	  }
+
+	}
 }

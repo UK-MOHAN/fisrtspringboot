@@ -65,42 +65,39 @@ public class StudentController {
 	public ResponseEntity<Long> getCount() {
 		return ResponseEntity.ok(studentService.getTotalStudents());
 	}
-	
-	//COUNT NO OF COUNTRIES
+
+	// COUNT NO OF COUNTRIES
 	@GetMapping("city/{city}")
-	public ResponseEntity<Long> getCitiesCount(@PathVariable String city){
+	public ResponseEntity<Long> getCitiesCount(@PathVariable String city) {
 		return ResponseEntity.ok(studentService.getCityCount(city));
-		
+
 	}
-	
-	//CHECK STUDENT EXISTS
+
+	// CHECK STUDENT EXISTS
 	@GetMapping("check/{studentId}")
-	public ResponseEntity<Boolean> checkStudentExists(@PathVariable int studentId){
+	public ResponseEntity<Boolean> checkStudentExists(@PathVariable int studentId) {
 		return ResponseEntity.ok(studentService.checkStudentExist(studentId));
 	}
-	
-	
+
 	@DeleteMapping("/{id}")
-	public ResponseEntity<String> deleteStudent(@PathVariable("id") int studentId){
+	public ResponseEntity<String> deleteStudent(@PathVariable("id") int studentId) {
 		studentService.deleteStudent(studentId);
 		return ResponseEntity.ok("Student deleted SucessFully");
-		
+
 	}
-	
+
 	@DeleteMapping("deleteRecord")
-	public ResponseEntity<Students> deleteByStudent(@RequestBody Students studs ){
-	  Students stud22 = 	studentService.deleteStudentRecords(studs);
+	public ResponseEntity<Students> deleteByStudent(@RequestBody Students studs) {
+		Students stud22 = studentService.deleteStudentRecords(studs);
 		return ResponseEntity.ok(stud22);
-		
+
 	}
-	
-	   // All students with courses
-    @GetMapping("/with-courses")
-	public ResponseEntity<List<StudentCoursesDTO>> getAllStudentsAndCourses(){
+
+	// All students with courses
+	@GetMapping("/with-courses")
+	public ResponseEntity<List<StudentCoursesDTO>> getAllStudentsAndCourses() {
 		return ResponseEntity.ok(studentService.getAllStudentsWithCourses());
-		
+
 	}
-	
-	
 
 }

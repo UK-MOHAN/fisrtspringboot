@@ -8,18 +8,18 @@ import lombok.Data;
 @Data
 public class Customers {
 
-    @Id
-    private int customerid;      // ✅ matches MySQL column exactly
+	@Id
+	private int customerid; // ✅ matches MySQL column exactly
 
-    private String first_name;   // ✅ matches MySQL column exactly
+	private String first_name; // ✅ matches MySQL column exactly
 
-    private String last_name;    // ✅ matches MySQL column exactly
+	private String last_name; // ✅ matches MySQL column exactly
 
-    private String email;
+	private String email;
 
-    private String city;
+	private String city;
 
-    private int age;
-    
-    private String phone;
+	private int age;
+
+	private String phone;
 }

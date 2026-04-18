@@ -53,6 +53,54 @@ pipeline {
                 sh 'git --version'
             }
         }
+        
+        stage('Who Am I'){
+			steps{
+				echo '👤 Current user...'
+				sh 'whoami'
+			}
+			}
+	    stage('Where Am I'){
+			steps{
+				echo  '📍 Current directory...'
+				sh 'pwd'
+			}
+		} 
+		
+		stage('What OS'){
+			steps{
+				echo '💻 Operating System...'
+				sh 'uname-a'
+				sh 'sw_vers'
+			}
+		}	
+		
+		
+		        stage('CPU Info') {
+            steps {
+                echo '⚡ CPU Info...'
+                sh 'sysctl -n machdep.cpu.brand_string'   // CPU name on Mac
+                sh 'sysctl -n hw.ncpu'                    // number of CPUs
+            }
+        }
+
+        stage('Memory Info') {
+            steps {
+                echo '🧠 Memory Info...'
+                sh 'vm_stat'                   // memory stats on Mac
+                sh 'sysctl hw.memsize'         // total RAM in bytes
+            }
+        }
+
+        stage('Disk Space') {
+            steps {
+                echo '💾 Disk Space...'
+                sh 'df -h'                     // disk usage human readable
+                sh 'du -sh *'                  // size of each folder
+            }
+        }
+
+		
 
     }
 

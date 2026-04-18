@@ -7,7 +7,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
-
 import com.demo.dto.StudentCoursesDTO;
 import com.demo.entity.Students;
 import com.demo.repository.StudentRepository;
@@ -45,31 +44,30 @@ public class StudentService {
 	public List<Students> getAllStudents() {
 		return studentRepository.findAll();
 	}
-	
+
 	public long getCityCount(String city) {
 		return studentRepository.countByCity(city);
 	}
-	
-	public boolean checkStudentExist(int studentId){
+
+	public boolean checkStudentExist(int studentId) {
 		return studentRepository.existsById(studentId);
-		
+
 	}
-	
+
 	public void deleteStudent(int studentId) {
-	    studentRepository.deleteById(studentId);
+		studentRepository.deleteById(studentId);
 	}
-	
-	/*delete based on any column */
-	public Students deleteStudentRecords(Students studs){
+
+	/* delete based on any column */
+	public Students deleteStudentRecords(Students studs) {
 		studentRepository.delete(studs);
 		return studs;
-		
+
 	}
-	
-	public List<StudentCoursesDTO> getAllStudentsWithCourses(){
+
+	public List<StudentCoursesDTO> getAllStudentsWithCourses() {
 		return studentRepository.findAllStudentsWithCourse();
-		
+
 	}
-	
+
 }
-	

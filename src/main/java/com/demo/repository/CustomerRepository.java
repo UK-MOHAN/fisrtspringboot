@@ -7,6 +7,7 @@ import com.demo.entity.Customers;
 
 @Repository
 public interface CustomerRepository extends JpaRepository<Customers, Integer> {
-    // ✅ fixed: Integer not Int (must be wrapper class, not primitive)
-    // ✅ fixed: removed wrong List<Customers> findById() — JpaRepository already provides it
+	// ✅ fixed: Integer not Int (must be wrapper class, not primitive)
+	// ✅ fixed: removed wrong List<Customers> findById() — JpaRepository already
+	// provides it
 }

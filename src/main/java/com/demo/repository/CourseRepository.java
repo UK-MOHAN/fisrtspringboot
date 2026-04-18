@@ -8,15 +8,12 @@ import org.springframework.stereotype.Repository;
 import com.demo.entity.Courses;
 
 @Repository
-public interface CourseRepository extends JpaRepository<Courses , Integer>{
-	
-	Page<Courses> findByCategory(String category , PageRequest pageable );
-	
-	
-	
-	Page<Courses> findByDifficulty(String difficulty , PageRequest pageable);
-	
-	
-	Page<Courses> findByCourseName(String courseName , PageRequest pageable);
+public interface CourseRepository extends JpaRepository<Courses, Integer> {
+
+	Page<Courses> findByCategory(String category, PageRequest pageable);
+
+	Page<Courses> findByDifficulty(String difficulty, PageRequest pageable);
+
+	Page<Courses> findByCourseName(String courseName, PageRequest pageable);
 
 }

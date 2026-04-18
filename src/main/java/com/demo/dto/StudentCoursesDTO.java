@@ -6,15 +6,14 @@ import lombok.Data;
 @Data
 public class StudentCoursesDTO {
 
-    private String firstName;
-    private String lastName;
-    private String courseName;
-    private String email;
-    private String category;
-    private String completionStatus;
-    private double score;
-    private double fee;
-
+	private String firstName;
+	private String lastName;
+	private String courseName;
+	private String email;
+	private String category;
+	private String completionStatus;
+	private double score;
+	private double fee;
 
 	public String getFirstName() {
 		return firstName;
@@ -79,6 +78,5 @@ public class StudentCoursesDTO {
 	public void setFee(double fee) {
 		this.fee = fee;
 	}
-	
 
 }

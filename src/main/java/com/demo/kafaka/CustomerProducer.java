@@ -8,16 +8,16 @@ import org.springframework.stereotype.Service;
 @Service
 public class CustomerProducer {
 
-    private static final String TOPIC = "customer-topic";
+	private static final String TOPIC = "customer-topic";
 
-    private final KafkaTemplate<String, Customers> kafkaTemplate;
+	private final KafkaTemplate<String, Customers> kafkaTemplate;
 
-    public CustomerProducer(KafkaTemplate<String, Customers> kafkaTemplate) {
-        this.kafkaTemplate = kafkaTemplate;
-    }
+	public CustomerProducer(KafkaTemplate<String, Customers> kafkaTemplate) {
+		this.kafkaTemplate = kafkaTemplate;
+	}
 
-    public void sendMessage(Customers customer) {
-        System.out.println("Sending to Kafka: " + customer);
-        kafkaTemplate.send(TOPIC, customer);
-    }
+	public void sendMessage(Customers customer) {
+		System.out.println("Sending to Kafka: " + customer);
+		kafkaTemplate.send(TOPIC, customer);
+	}
 }
