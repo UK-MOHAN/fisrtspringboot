@@ -66,39 +66,38 @@ pipeline {
 				sh 'pwd'
 			}
 		} 
-		
-		stage('What OS'){
-			steps{
-				echo '💻 Operating System...'
-				sh 'uname-a'
-				sh 'sw_vers'
-			}
-		}	
-		
-		
-		        stage('CPU Info') {
-            steps {
-                echo '⚡ CPU Info...'
-                sh 'sysctl -n machdep.cpu.brand_string'   // CPU name on Mac
-                sh 'sysctl -n hw.ncpu'                    // number of CPUs
-            }
-        }
 
-        stage('Memory Info') {
-            steps {
-                echo '🧠 Memory Info...'
-                sh 'vm_stat'                   // memory stats on Mac
-                sh 'sysctl hw.memsize'         // total RAM in bytes
-            }
-        }
+       stage('What OS') {
+    steps {
+        echo '💻 Operating System...'
+        sh 'uname -a'          // ✅ space between uname and -a
+        sh 'sw_vers'           // ✅ Mac version - no dash needed
+    }
+}
 
-        stage('Disk Space') {
-            steps {
-                echo '💾 Disk Space...'
-                sh 'df -h'                     // disk usage human readable
-                sh 'du -sh *'                  // size of each folder
-            }
-        }
+stage('CPU Info') {
+    steps {
+        echo '⚡ CPU Info...'
+        sh 'sysctl -n machdep.cpu.brand_string'   // ✅ space after sysctl
+        sh 'sysctl -n hw.ncpu'
+    }
+}
+
+stage('Memory Info') {
+    steps {
+        echo '🧠 Memory...'
+        sh 'vm_stat'           // ✅ no dash needed
+        sh 'sysctl hw.memsize'
+    }
+}
+
+stage('Disk Space') {
+    steps {
+        echo '💾 Disk...'
+        sh 'df -h'             // ✅ space between df and -h
+        sh 'du -sh . '         // ✅ current folder size only
+    }
+}
 
 		
 
