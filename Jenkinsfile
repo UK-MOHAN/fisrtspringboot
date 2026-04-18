@@ -26,6 +26,27 @@ pipeline {
             }
         }
 
+        stage('Maven Clean') {
+            steps {
+                echo '🧹 Maven clean...'
+                sh 'mvn clean'          // ✅ mvn not maven
+            }
+        }
+
+        stage('Maven Install') {
+            steps {
+                echo '📦 Maven install...'
+                sh 'mvn install -DskipTests'   // ✅ mvn not maven
+            }
+        }
+
+        stage('Maven Build') {          // ✅ fixed typo satge → stage
+            steps {
+                echo '🔨 Building JAR...'
+                sh 'mvn clean install -DskipTests'
+            }
+        }
+
         stage('Check Git') {
             steps {
                 echo '🔗 Checking Git...'
