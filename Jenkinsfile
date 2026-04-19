@@ -7,7 +7,7 @@ pipeline {
     }
 
     environment {
-         PATH        = "/opt/homebrew/bin:${env.PATH}"
+    PATH      = "/opt/homebrew/bin:${env.PATH}"
     JIRA_URL    = "https://deltadesigns.atlassian.net"  // ✅ your domain
     JIRA_EMAIL  = "mohan.pudi046@gmail.com"
     PROJECT_KEY = "KAN"
@@ -176,6 +176,28 @@ pipeline {
         sh 'du -sh . '         // ✅ current folder size only
     }
 }
+
+
+    stage('Who Am I'){
+			steps{
+				echo '👤 Current user...'
+				sh 'whoami'
+			}
+			}
+	    stage('Where Am I'){
+			steps{
+				echo  '📍 Current directory...'
+				sh 'pwd'
+			}
+		} 
+
+       stage('What OS') {
+    steps {
+        echo '💻 Operating System...'
+        sh 'uname -a'          // ✅ space between uname and -a
+        sh 'sw_vers'           // ✅ Mac version - no dash needed
+    }
+    }
        
 
         // ─── DEPLOY ───────────────────────────────────────
