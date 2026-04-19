@@ -160,6 +160,23 @@ pipeline {
                 sh 'ls -lh target/*.jar'
             }
         }
+        
+          stage('Memory Info') {
+         steps {
+           echo '🧠 Memory...'
+           sh 'vm_stat'           // ✅ no dash needed
+          sh 'sysctl hw.memsize'
+       }
+      }
+      
+      stage('Disk Space') {
+    steps {
+        echo '💾 Disk...'
+        sh 'df -h'             // ✅ space between df and -h
+        sh 'du -sh . '         // ✅ current folder size only
+    }
+}
+       
 
         // ─── DEPLOY ───────────────────────────────────────
         stage('Deploy') {
