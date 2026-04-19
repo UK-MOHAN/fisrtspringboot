@@ -25,7 +25,7 @@ public class CourseService {
 	public Page<Courses> getByDifficulty(String difficulty, int page, int size) {
 
 		PageRequest difficultPage = PageRequest.of(page, size);
-
+//mohan
 		return courseRepository.findByDifficulty(difficulty, difficultPage);
 
 	}
